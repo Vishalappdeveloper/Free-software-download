@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tools Hub</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0d6efd"/>
+  <style>
+    body { font-family: sans-serif; margin: 0; background: #f0f4ff; }
+    header { background: #0d6efd; color: white; padding: 1em; }
+    .tools { padding: 2em; }
+    .tool-card {
+      background: white; padding: 1em; margin: 1em auto;
+      max-width: 400px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header><h1>🛠️ Tools Hub</h1><p>Installable PWA</p></header>
+  <div class="tools">
+    <div class="tool-card"><h2>Image Converter</h2><p>Convert formats easily.</p></div>
+    <div class="tool-card"><h2>Compressor</h2><p>Compress files online.</p></div>
+  </div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>
